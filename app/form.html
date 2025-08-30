@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Inspeção de Equipamentos - Braslima</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('./imgs/watermark.png');
+                background-repeat: repeat;
+                background-color: transparent;
+                /* garante que não haja cor de fundo */
+
+            }
+            .container {
+            max-width: auto;
+
+        }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./imgs/watermark.png');
+            background-repeat: repeat;
+            background-color: transparent;
+            /* garante que não haja cor de fundo */
+
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .header p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .info input[type="text"], 
+        .info input[type="date"], 
+        .info input[type="datetime-local"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .checklist {
+            margin-bottom: 20px;
+        }
+        .item {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .item label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+        .options label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .options label:hover {
+            background-color: #f0f0f0;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        .options input[type="radio"][value="Não Conforme"]:checked + label {
+            background-color: #FF6347;
+            border-color: #FF6347;
+        }
+        .explicacao {
+            display: none;
+            margin-top: 10px;
+        }
+        .explicacao.active {
+            display: block;
+        }
+        .explicacao textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid red;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        .observacoes {
+            margin-top: 10px;
+        }
+        .observacoes textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        .fotos {
+            margin-top: 10px;
+        }
+        .fotos input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .fotos img {
+            max-width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .footer button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./imgs/favicon.png" alt="Logo Braslima">
+            <h1>Ficha de Inspeção de Equipamentos</h1>
+        </div>
+        <p>Este documento é uma ficha de inspeção de equipamentos realizada pela empresa Braslima, especializada em prevenção de incêndios. Aqui, o técnico irá registrar as condições dos equipamentos inspecionados e adicionar observações pertinentes.</p>
+        <div class="info">
+            <label>Nome do Técnico:</label>
+            <input type="text" id="nomeTecnico" readonly>
+            <label>Empresa:</label>
+            <input type="text" id="nomeEmpresa" readonly>
+            <label>CNPJ:</label>
+            <input type="text" id="cnpjEmpresa" readonly>
+            <label>Endereço:</label>
+            <input type="text" id="enderecoEmpresa" readonly>
+            <label>Horário Previsto:</label>
+            <input type="datetime-local" id="horarioPrevisto" readonly>
+            <label>Horário de Início:</label>
+            <input type="datetime-local" id="horarioInicio">
+            <label>Duração da Inspeção:</label>
+            <input type="text" id="duracaoInspecao" readonly>
+        </div>
+        <div class="checklist" id="checklist"></div>
+        <div class="footer">
+            <button onclick="window.print()">Imprimir Ficha</button>
+        </div>
+    </div>
+    <script>
+        function preencherFormulario() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dadosBase64 = urlParams.get('dados');
+            const dados = JSON.parse(atob(dadosBase64));
+
+            document.getElementById('nomeTecnico').value = dados.nomeTecnico;
+            document.getElementById('nomeEmpresa').value = dados.nomeEmpresa;
+            document.getElementById('cnpjEmpresa').value = dados.cnpjEmpresa;
+            document.getElementById('enderecoEmpresa').value = dados.enderecoEmpresa;
+            document.getElementById('horarioPrevisto').value = dados.horarioPrevisto;
+
+            const checklistContainer = document.getElementById('checklist');
+            dados.itens.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                itemElement.innerHTML = `
+                    <label>Item ${index + 1}: ${item}</label>
+                    <div class="options">
+                        <input type="radio" id="conforme${index}" name="conformidade${index}" value="Conforme">
+                        <label for="conforme${index}">Conforme</label>
+                        <input type="radio" id="naoConforme${index}" name="conformidade${index}" value="Não Conforme">
+                        <label for="naoConforme${index}">Não Conforme</label>
+                        <input type="radio" id="na${index}" name="conformidade${index}" value="N/A">
+                        <label for="na${index}">N/A</label>
+                    </div>
+                    <div class="explicacao" id="explicacao${index}">
+                        <label>Explicação:</label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="observacoes">
+                        <label>Observações:</label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="fotos">
+                        <label>Adicionar Fotos:</label>
+                        <input type="file" accept="image/*" multiple onchange="mostrarFotos(event, ${index})">
+                        <div id="fotosContainer${index}"></div>
+                    </div>
+                `;
+                checklistContainer.appendChild(itemElement);
+
+                const radios = itemElement.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        const explicacao = document.getElementById(`explicacao${index}`);
+                        if (this.value === 'Não Conforme') {
+                            explicacao.classList.add('active');
+                        } else {
+                            explicacao.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        function mostrarFotos(event, index) {
+            const files = event.target.files;
+            const fotosContainer = document.getElementById(`fotosContainer${index}`);
+            fotosContainer.innerHTML = '';
+            for (const file of files) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    fotosContainer.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        document.getElementById('horarioInicio').addEventListener('change', function() {
+            const horarioInicio = new Date(this.value);
+            const horarioPrevisto = new Date(document.getElementById('horarioPrevisto').value);
+            const diff = horarioInicio - horarioPrevisto;
+            const horas = Math.floor(diff / (1000 * 60 * 60));
+            const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('duracaoInspecao').value = `${horas}h ${minutos}m`;
+        });
+
+        window.onload = preencherFormulario;
+    </script>
+</body>
+</html>

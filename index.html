@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:site_name" content="Braslima Engenharia - Prevenção e combate a incêndio">
+  <meta name="keywords"
+    content="Serviços de prevenção e combate a incêndio, venda de extintores, sprinkler, instalação de sistema fixo de CO2 e saponificante, equipamentos para hidrantes, legalização junto ao CBMERJ, elaboração de projetos, sistemas de alarme e detecção, Braslima, Braslima engenharia, Braslima incêndio, Braslima prevenção e combate a incêndio, prevenção e combate a incêndio, Extintores, Extintor, CMI, Casa de maquina de incêndio, spk, Sistema fixo de CO2 e saponificante, saponificante, Loja fire, mangueira de incendio, esguicho regulável, esguicho, extintor pqs abc, extintor pqs bc, extintor Ap, extintor de CO2, extintor veicular, detector de fumaça, alarme de incêndio,legalização, aprovação, legalização junto ao CBMERJ,legalização no bombeiro, projeto bombeiro" />
+  <meta property="og:title" content="Braslima Engenharia - Prevenção e combate a incêndio" />
+  <meta property="og:description"
+    content="A Braslima Soluções é uma empresa especializada em prevenção e combate a incêndio, com o intuito de proteger vidas e patrimônios, sempre utilizando os melhores produtos do mercado.  Com sede própria na cidade do Rio de Janeiro, contamos com uma equipe de ponta, trabalhamos com profissionais que possuem bastante conhecimento e experiência nesse ramo e também contamos com uma equipe responsável pela criação de projetos de engenharia contra incêndio e que estão sempre em busca das melhores tecnologias do mercado." />
+  <meta property="og:image" itemprop="image" content="./imgs/banner">
+  <meta property="og:type" content="website" />
+  <title>Braslima - Prevenção e combate a incêndio</title>
+  <link href="./imgs/favicon.png" rel="Shortcut icon">
+  <link href="./output.css" rel="stylesheet">
+  <link href="./custom.css" rel="stylesheet">
+  <style>
+    /* Ajuste para o vídeo de fundo */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Navbar transparente sobre o vídeo */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 10;
+    }
+  </style>
+</head>
+<link rel="preload" href="./assets/fontawesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+</noscript>
+
+<body class="bg-white text-black">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar duration-500 bg-transparent reveal_top  text-white">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold"><img src="./imgs/logowhite.png" class="w-1/3"></a>
+      <div class="hidden md:flex font-thin space-x-12">
+        <a href="#" class="hover:text-gray-300">Home</a>
+        <a href="#history" class="hover:text-gray-300">Sobre</a>
+        <a href="#services" class="hover:text-gray-300">Serviços</a>
+        <a href="#footer" class="hover:text-gray-300">Contato</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col justify-end items-end  text-white">
+      <a href="#" class="block px-4 py-2 text-sm">Ínicio</a>
+      <a href="#history" class="block px-4 py-2 text-sm">Sobre</a>
+      <a href="#services" class="block px-4 py-2 text-sm">Serviços</a>
+      <a href="#footer" class="block px-4 py-2 text-sm">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center bg-neutral-900/80">
+    <video autoplay muted loop class="hero-video">
+      <source src="./imgs/banner1.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5.
+    </video>
+    <div class="z-10 scale_up">
+      <h1 class="text-3xl md:text-5xl font-bold text-white">Proteja seu maior patrimônio. <br>Prevenção é a melhor
+        solução!</h1>
+      <p class="mt-4 text-base sm:max-w-2xl max-w-sm mx-auto md:text-2xl text-gray-200">Especializados no ramo de
+        prevenção e combate a incêndio. Garantimos a satisfação de nossos clientes com excelência, compromisso e
+        segurança.</p>
+      <a href="#history"
+        class="mt-8 inline-block bg-red-600 text-white py-3 px-6 rounded-full font-semibold group">Saiba Mais <i
+          class="ml-2 duration-500 group-hover:ml-4 fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <div id="history" class="h-screen flex justify-center my-12 items-center">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="grid gap-5 row-gap-8 lg:grid-cols-2">
+        <div class="flex flex-col justify-center">
+          <div class="max-w-xl mb-6">
+            <h2
+              class="max-w-lg mb-6 font-sans reveal_left text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+              Conheça um pouco da <span class="relative px-1">
+                <span class="relative inline-block text-red-600 text-4xl sm:text-5xl"> nossa história...</span>
+              </span>
+            </h2>
+            <p class="text-base text-gray-700 reveal_left md:text-lg">
+              A Braslima Soluções é uma empresa especializada em prevenção e combate a incêndio, com o intuito de
+              proteger vidas e patrimônios, sempre utilizando os melhores produtos do mercado. Com sede própria na
+              cidade do Rio de Janeiro, contamos com uma equipe de ponta, trabalhamos com profissionais que possuem
+              bastante conhecimento e experiência nesse ramo e também contamos com uma equipe responsável pela criação
+              de projetos de engenharia contra incêndio e que estão sempre em busca das melhores tecnologias do mercado.
+
+              Nossa missão é entregar um serviço da mais alta qualidade e agilidade, dispondo de equipamentos de ponta e
+              executado por nossa equipe treinada e especializada no ramo de prevenção à incêndio. Garantimos a
+              satisfação de nossos clientes com excelência, compromisso e segurança.
+            </p>
+          </div>
+          <!-- <div class="grid gap-5 row-gap-8 sm:grid-cols-2">
+              <div class="bg-white border-l-4 shadow-sm border-blue-600">
+                <div class="h-full p-5 border border-l-0 rounded-r">
+                  <h6 class="mb-2 font-semibold leading-5">
+                    I'll be sure to note that in my log
+                  </h6>
+                  <p class="text-sm text-gray-900">
+                    Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-white border-l-4 shadow-sm border-blue-600">
+                <div class="h-full p-5 border border-l-0 rounded-r">
+                  <h6 class="mb-2 font-semibold leading-5">
+                    A business big enough that it could be listed
+                  </h6>
+                  <p class="text-sm text-gray-900">
+                    Those options are already baked in with this model shoot me an email clear.
+                  </p>
+                </div>
+              </div>
+            </div> -->
+        </div>
+        <div>
+          <img class="object-cover w-full h-56 rounded scale_up shadow-lg shadow-red-600 sm:h-96" src="./imgs/loja.jpg"
+            alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="bg-no-repeat bg-center bg-cover" style="background-image: url(./imgs/banner2.jpg);">
+    <section class=" flex justify-center backdrop-saturate-0 bg-neutral-900/90 items-center">
+      <section id="services" class="text-gray-900 mt-10">
+        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class=" max-w-5xl text-left reveal_left">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">O que o seu <span class="text-red-600">negócio
+                precisa?</span></h2>
+
+            <p class="mt-2  text-base sm:text-xl text-white  font-thin">
+              Trabalhamos com profissionais que possuem bastante conhecimento e experiência nesse ramo e também contamos
+              com uma equipe responsável pela criação de projetos de engenharia contra incêndio e que estão sempre em
+              busca das melhores tecnologias do mercado.
+
+
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-3">
+            <button onclick="goWhats('Sistemas de alarmes e detecção (SDAI)')"
+              class=" rounded-xl scale_up text-start flex flex-col  justify-center  bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-8 h-8" src="./imgs/icons/4823656.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Sistemas de alarmes e detecção (SDAI)</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                São sistemas responsáveis por indicar quando e onde há propagação de chamas, evitando, assim, o
+                alastramento de fogo, que pode causar inúmeras perdas materiais e, até mesmo, humanas.
+              </p>
+            </button>
+
+            <button onclick="goWhats('Equipamentos para hidrantes')"
+              class="rounded-xl scale_up text-start flex flex-col  justify-center  bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/2709414.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Equipamentos para hidrantes</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                São sistemas hidráulicos com a função de ajudar no combate aos incêndios e proteger as pessoas e os
+                patrimônios em casos de emergências.
+              </p>
+            </button>
+
+            <button onclick="goWhats('Venda de Extintores')"
+              class="rounded-xl scale_up text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/4318482.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Venda de Extintores</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                São dispositivos de combate ao princípio de incêndio. São equipamentos com pequena autonomia de ação que
+                são destinados ao combate do foco do fogo.
+              </p>
+            </button>
+
+
+            <button onclick="goWhats('Instalação e Manutenção de CMI')"
+              class="rounded-xl scale_up text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/1028708.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Casa de Máquinas de Incêndio (CMI)</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                É um compartimento destinado especificamente ao abrigo de bombas elétricas de incêndio e demais
+                apetrechos complementares ao seu funcionamento, não admitindo o seu uso para outro fim.
+              </p>
+            </button>
+
+            <button onclick="goWhats('Instalação de Sistema Fixos de Co2 e Saponificante')"
+              class="rounded-xl scale_up text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/8527703.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Sistemas Fixos de Co2 e
+                Saponificante</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                É destinado à proteção dos dutos de exaustão da cozinha tendo como referência as recomendações das
+                normas relacionadas, prevalecendo os parâmetros de norma de maior exigência.
+              </p>
+            </button>
+            <button onclick="goWhats('Elaboração de Projetos')"
+              class="rounded-xl scale_up text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/1372958.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Elaboração de Projetos</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                Ajuda a sistematizar esse trabalho em etapas a serem cumpridas, a compartilhar a imagem do que se quer
+                alcançar, a identificar as principais deficiências, e a superar e apontar possíveis falhas durante a
+                execução das atividades previstas.
+              </p>
+            </button>
+            <button onclick="goWhats('Instalação de Sprinklers')"
+              class="rounded-xl scale_up   text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/2991309.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Sistemas de Sprinklers</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                Chuveiros Automáticos ou sprinklers, como são mais conhecidos, servem para proteger os ambientes de
+                incêndios e são fundamentais para a segurança de patrimônios e vidas humanas.
+              </p>
+            </button>
+            <button onclick="goWhats('Legalização junto ao CBMERJ')"
+              class="rounded-xl scale_up  text-start flex flex-col  justify-center bg-white items-start border border-gray-800 p-8 shadow-xl transition hover:border-red-500/10 hover:shadow-red-500/10">
+              <div class="text-red-500 text-3xl">
+                <img class="w-10 h-10" src="./imgs/icons/1861868.png">
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-gray-900">Legalização junto ao CBMERJ</h2>
+
+              <p class="mt-1 text-base text-gray-800">
+                Para a legalização acontecer, realizam-se algumas etapas com empresa devidamente credenciada, de acordo
+                com as legislações e normas vigentes, obedecendo regras e exigências conforme a característica de cada
+                edificação.
+              </p>
+            </button>
+
+          </div>
+
+          <div class="mt-12 text-center">
+
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </aside>
+  <section class="flex justify-center h-screen  bg-white  items-center">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl text-black md:max-w-full text-center lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="grid gap-10 row-gap-8 lg:grid-cols-3">
+        <div>
+          <div class="flex items-center text-center justify-center">
+            <h6 class="mr-2 text-4xl font-bold md:text-5xl text-red-600">
+        +10 Anos
+            </h6>
+            <div class="flex items-center justify-center text-white rounded-full bg-red-600 w-7 h-7">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+          </div>
+          <p class="mb-2 font-bold md:text-lg">Experiência de Mercado</p>
+          <p class="text-black max-w-sm mx-auto">
+            A área total construída em diversos projetos realizados ao longo dos anos.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-center  text-center justify-center">
+            <h6 class="mr-2 text-4xl font-bold md:text-5xl text-red-600">
+              +1.2Mil
+            </h6>
+            <div class="flex items-center justify-center text-white rounded-full bg-red-600 w-7 h-7">
+
+              <i class="fa-solid fa-trowel-bricks"></i>
+            </div>
+          </div>
+          <p class="mb-2 font-bold md:text-lg">Serviços Concluídos</p>
+          <p class="text-black max-w-sm mx-auto">
+            Projetos finalizados com sucesso, entregues dentro do prazo e da qualidade esperada.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-center  text-center justify-center">
+            <h6 class="mr-2 text-4xl font-bold md:text-5xl text-red-600">
+              +120
+            </h6>
+            <div class="flex items-center  text-white justify-center rounded-full bg-red-600 w-7 h-7">
+            
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <p class="mb-2 font-bold md:text-lg">Funcionários</p>
+          <p class="text-black max-w-sm mx-auto">
+            Um time dedicado e qualificado, composto por mais de 120 profissionais.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <!-- <section class="h-screen flex justify-center sm:my-0 my-20 items-center">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
+        <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
+          <div class="max-w-xl mb-6">
+            <div>
+              <p
+                class="inline-block px-3 scale_up py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-red-600">
+                O Futuro Chegou
+              </p>
+            </div>
+            <h2
+              class="max-w-lg mb-6 font-sans reveal_left text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+              Monitore sua obra a <span class="text-red-600">distância pelo nosso Aplicativo.</span>
+            </h2>
+            <p class="text-base text-gray-700 reveal_left md:text-lg">
+              Com o nosso aplicativo, você pode acompanhar o andamento da sua obra em tempo real, de qualquer lugar.
+              Tenha acesso a relatórios detalhados, fotos, vídeos e comunicações diretas com nossa equipe, tudo na palma
+              da sua mão.
+            </p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button onclick="goWhats('sistema')"
+              class="px-4  reveal_left group bg-red-600 text-center rounded-lg p-2 text-white font-semibold duration-300 hover:shadow-lg">
+              Conheça nosso sistema <i class="ml-2 group-hover:ml-4 duration-500 fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center justify-center lg:w-1/2">
+          <div class="w-3/5">
+            <img class="object-cover reveal_bottom" src="./imgs/celrender.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <a href="/" aria-label="Scroll down"
+        class="flex items-center justify-center w-10 h-10 mx-auto text-gray-600 duration-300 transform border border-gray-400 rounded-full hover:text-red-600 hover:border-red-600 hover:shadow hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <path
+            d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </section> -->
+
+  <aside class="bg-no-repeat bg-center bg-cover" style="background-image: url(./imgs/banner1.jpg);">
+    <section class=" flex justify-center backdrop-saturate-0 h-screen bg-neutral-900/90 items-center">
+      <section class="text-white">
+        <div
+          class="container flex flex-col justify-center p-6 mx-auto sm:mt-0  sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+          <div
+            class="flex scale_up items-center justify-center p-6   sm:mb-0 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+            <img src="./imgs/exti3d.webp" alt="" class=" w-2/3 sm:w-full object-contain h-max floating">
+          </div>
+          <div class="flex flex-col justify-center sm:p-6 text-center rounded-sm lg:max-w-md xl:max-w-3xl lg:text-left">
+            <h1 class="text-3xl scale_up font-bold leading-none sm:text-6xl">
+              Faça seu orçamento com <span class="text-red-500">qualidade</span> e <span
+                class="text-red-500">segurança</span>.
+            </h1>
+            <p class="mt-6 mb-8 scale_up text-lg sm:text-xl font-thin sm:mb-12">Sua propriedade necessita de um sistema
+              de prevenção e combate a incêndio de qualidade, sendo essencial para a segurança do seu patrimônio e da
+              vida dos seus funcionários e clientes.
+            </p>
+            <div
+              class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+              <button rel="noopener noreferrer" onclick="goWhats('como pedir um orçamento')"
+                class="px-8 py-3 text-base scale_up  group font-semibold rounded duration-500 hover:text-lg bg-red-500 text-white"><i
+                  class="fa-solid fa-fire-extinguisher group-hover:rotate-45 text-white duration-500 fa-lg group-hover:scale-110 mr-2"></i>
+                Fazer Orçamento</button>
+              <button rel="noopener noreferrer" onclick="goWhats('Orçamento')" href="#"
+                class="px-8 py-3 text-base scale_up font-semibold border-2 rounded border-white group"><i
+                  class="fa-solid fa-plus -mr-2 group-hover:mr-2 opacity-0 group-hover:opacity-100 duration-500"></i>
+                Saiba Mais</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </section>
+
+  </aside>
+
+  <div class="my-6 flex justify-center items-center">
+    <section id="clientes" class="text-gray-900  max-w-screen-xl  mx-auto body-font">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="flex flex-wrap reveal_bottom w-full mx-0 sm:mx-5 mb-8 text-center sm:text-left">
+          <div class=" max-w-5xl text-left reveal_left">
+            <h2 class="text-3xl font-bold sm:text-4xl">Veja alguns dos <span class="text-red-600">nossos
+                clientes.</span></h2>
+
+            <p class="mt-2  text-lg sm:text-xl text-gray-600 ">
+              Os melhores exemplos do nossa qualidade e profissionalismo na entrega dos nossos diversos tipos de
+              serviços, prezando sempre pela agilidade e segurança.
+            </p>
+          </div>
+        </div>
+        <section class=" ">
+          <div class="container  mx-auto text-center">
+
+          </div>
+          <div class="container flex flex-wrap  justify-center mx-auto  ">
+            <div
+              class="scale_up grayscale duration-500  hover:grayscale-0 flex justify-center w-1/3   p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150   duration-500 hover:rounded-none" src="./imgs/logos/20.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/5.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/16.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/12.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/11.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/27.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/21.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/10.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/8.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/9.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/2.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/7.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/13.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/14.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/15.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/3.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/17.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/18.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6   align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/19.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/1.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/4.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex items-center justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class=" hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/32.jpg">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex items-center justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class=" hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/31.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex items-center justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class=" hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/33.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex items-center justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class=" hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/34.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/22.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/23.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/24.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/25.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/26.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/6.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/28.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/29.png">
+            </div>
+            <div
+              class="scale_up grayscale duration-500 hover:grayscale-0 flex justify-center w-1/3 p-6 align-middle md:w-1/3 xl:w-[12%] xl:h-[12%]">
+              <img class="rounded-3xl hover:scale-150 duration-500 hover:rounded-none" src="./imgs/logos/30.png">
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+
+  
+  <section class="text-gray-600 body-font relative">
+    <div class=" inset-0 h-96 bg-gray-300">
+      <iframe class="" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map"
+        scrolling="no"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14703.249163206661!2d-43.6245399!3d-22.8833915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5583e10178f%3A0xc4aa124b7f036ffc!2sBraslima%20-%20Preven%C3%A7%C3%A3o%20e%20Combate%20a%20Inc%C3%AAndio!5e0!3m2!1spt-BR!2sbr!4v1726154421577!5m2!1spt-BR!2sbr"></iframe>
+    </div>
+
+  </section>
+  <footer id="footer" class="reveal_bottom shadow-2xl">
+    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="sm:col-span-2">
+          <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
+            <img src="./imgs/logofinal.png">
+          </a>
+          <div class="mt-6 lg:max-w-sm">
+            <p class="text-sm text-gray-800">
+              Somos uma empresa especializada em prevenção e combate a incêndio, com o intuito de proteger vidas e
+              patrimônios, sempre utilizando os melhores produtos do mercado.
+            </p>
+
+          </div>
+        </div>
+        <div class="space-y-2 text-sm">
+          <p class="text-base font-bold tracking-wide text-gray-900">Contatos</p>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Telefone:</p>
+            <a href="tel:21970355863" aria-label="Our phone" title="Our phone"
+              class="transition-colors duration-300 text-red-600 hover:text-deep-purple-800">+55 (21) 96560-8706</a>
+          </div>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Email:</p>
+            <a href="mailto:comercial@braslimaengenharia.com.br" aria-label="Our email" title="Our email"
+              class="transition-colors duration-300 text-red-600 hover:text-deep-purple-800">comercial@braslimaengenharia.com.br</a>
+          </div>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Endereço:</p>
+            <a href="https://www.google.com/maps?ll=-22.883391,-43.62454&z=14&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=14171159292937465852 "
+              target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address"
+              class="transition-colors duration-300 text-red-600 hover:text-deep-purple-800">
+              Estr. do Campinho, 6523
+            </a>
+          </div>
+        </div>
+        <div>
+          <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+          <div class="flex items-center mt-1 space-x-3">
+            <a href="https://api.whatsapp.com/send/?phone=5521965608706&text=Ol%C3%A1!%20vim%20pelo%20site&type=phone_number&app_absent=0&type=phone_number&app_absent=0"
+              class="text-gray-500 transition-colors duration-300  ">
+              <i class="fa-brands fa-whatsapp fa-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/braslimaincendio/"
+              class="text-gray-500 transition-colors duration-300  ">
+              <i class="fa-brands fa-instagram fa-lg"></i>
+            </a>
+            <a href="mailto:comercial@braslimaengenharia.com.br" class="text-gray-500 transition-colors duration-300">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+
+          </div>
+          <p class="mt-4 text-sm text-gray-500">
+            Você pode encontrar a Braslima em quase todas as redes sociais.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+
+
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/scrollreveal.js"></script>
+  <script>
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.reveal_bottom', { origin: 'bottom', distance: '400px', delay: 300 });
+    ScrollReveal().reveal('.reveal_bottom_slow', { origin: 'bottom', distance: '400px', delay: 600 });
+    ScrollReveal().reveal('.reveal_top', { easing: 'ease-in-out', origin: 'top', distance: '400px', delay: 300 });
+    ScrollReveal().reveal('.reveal_left_delay', { origin: 'left', distance: '100px', delay: 700 });
+    ScrollReveal().reveal('.reveal_left', { origin: 'left', distance: '100px', delay: 400, });
+    ScrollReveal().reveal('.reveal_right', { origin: 'right', distance: '100px', delay: 400 });
+    ScrollReveal().reveal('.reveal_spin', { duration: 1000, delay: 700, rotate: { x: 10, z: 200 } })
+    ScrollReveal().reveal('.scale_up', { scale: 0.85, delay: 500 });
+  </script>
+  <script>
+    window.onscroll = function () {
+      var navbar = document.getElementById("navbar");
+      if (window.scrollY > 700) {
+
+        navbar.classList.add("bg-transparent", "bg-neutral-950", "backdrop-blur-xl");
+        navbar.classList.remove("bg-transparent");
+      } else {
+   
+        navbar.classList.add("bg-transparent");
+        navbar.classList.remove("backdrop-blur-xl", "bg-neutral-950");
+      }
+    };
+  </script>
+  <script>
+
+
+    function goWhats(msg) {
+      let number = "5521965608706"
+      let msgFinal = `Olá! vim pelo site estou interessado em saber mais sobre ${msg}`
+      let isMobile = (function (a) {
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) {
+          return true
+        } else {
+          return false
+        }
+      })(navigator.userAgent || navigator.vendor || window.opera);
+
+      // checar
+      if (isMobile) {
+        window.location.href = `whatsapp://send?phone=${encodeURIComponent(number)}&text=${encodeURIComponent(msgFinal)}`
+      } else {
+        window.location.href = `https://api.whatsapp.com/send?phone=${encodeURIComponent(number)}&text=${encodeURIComponent(msgFinal)}`
+      }
+    }
+    function showEmailForm(a) {
+      let emailForm = document.getElementById("emailForm")
+      emailForm.style.display = "block"
+      emailForm.scrollIntoView(false);
+      a.style.display = "none"
+    }
+    window.addEventListener("load", function () {
+      var bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+      bannerNode.parentNode.removeChild(bannerNode);
+    });
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
+</html>

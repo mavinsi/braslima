@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Ficha de Inspeção</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./imgs/watermark.png');
+            background-repeat: repeat;
+            background-color: transparent;
+        }
+        .modal {
+          backdrop-filter: blur(5px);
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 8px;
+        }
+        .bg-selected {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="modal" class="modal flex">
+        <div class="modal-content">
+            <h2 class="text-xl font-bold mb-4">Acesso Restrito</h2>
+            <label for="accessCode" class="block text-sm font-medium text-gray-700 mb-2">Código de Acesso</label>
+            <input type="password" id="accessCode" class="mt-1 p-2 w-full border rounded-md mb-4">
+            <button id="checkAccess" class="p-2 bg-blue-500 text-white rounded-md w-full">Entrar</button>
+        </div>
+    </div>
+    
+    <div class="container mx-auto mt-10 p-5 bg-white rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-5">
+            <img src="./imgs/favicon.png" class="h-16">
+            <h1 class=" text-xl  sm:text-2xl font-bold">Sistema Interno de Relatório de Inspeção</h1>
+        </div>
+
+        <form id="form-gerador">
+            <div class="mb-4">
+                <label for="nomeEmissor" class="block text-sm font-medium text-gray-700">Nome do Emissor</label>
+                <input type="text" id="nomeEmissor" class="mt-1 p-2 w-full border rounded-md" readonly>
+            </div>
+            <div class="mb-4">
+                <label for="nomeTecnico" class="block text-sm font-medium text-gray-700">Nome do Técnico</label>
+                <input type="text" id="nomeTecnico" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+            <div class="mb-4">
+                <label for="nomeEmpresa" class="block text-sm font-medium text-gray-700">Nome da Empresa</label>
+                <input type="text" id="nomeEmpresa" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+            <div class="mb-4">
+                <label for="cnpjEmpresa" class="block text-sm font-medium text-gray-700">CNPJ da Empresa</label>
+                <input type="text" id="cnpjEmpresa" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+            <div class="mb-4">
+                <label for="enderecoEmpresa" class="block text-sm font-medium text-gray-700">Endereço da Empresa</label>
+                <input type="text" id="enderecoEmpresa" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+            <div class="mb-4">
+                <label for="horarioPrevisto" class="block text-sm font-medium text-gray-700">Horário Previsto</label>
+                <input type="datetime-local" id="horarioPrevisto" class="mt-1 p-2 w-full border rounded-md" required>
+            </div>
+            <div class="mb-4">
+                <label for="item" class="block text-sm font-medium text-gray-700">Item de Inspeção</label>
+                <div class="flex">
+                    <input type="text" id="item" class="mt-1 p-2 w-full border rounded-md">
+                    <button type="button" id="adicionarItem" class="ml-2 p-2 bg-blue-500 text-white rounded-md">Adicionar</button>
+                </div>
+            </div>
+            <div id="itensContainer" class="mb-4"></div>
+            <div class="flex justify-end">
+                <button type="button" id="gerarRelatorio" class="p-2 bg-green-500 text-white rounded-md">Gerar Ficha</button>
+            </div>
+        </form>
+        <div id="resultado" class="mt-4 hidden">
+            <a id="acessarRelatorio" class="p-2 bg-blue-500 text-white rounded-md mr-2">Acessar Relatório</a>
+            <button id="compartilharRelatorio" class="p-2 bg-purple-500 text-white rounded-md">Compartilhar Relatório</button>
+        </div>
+    </div>
+
+    <script>
+        const usuarios = {
+            'Marcus Vinicius Rodrigues da Silva': '123456',
+            'Eduardo Lima': '1234567'
+        };
+
+        document.getElementById('checkAccess').addEventListener('click', function() {
+            const accessCode = document.getElementById('accessCode').value;
+            const nomeEmissor = Object.keys(usuarios).find(key => usuarios[key] === accessCode);
+            if (nomeEmissor) {
+                document.getElementById('nomeEmissor').value = nomeEmissor;
+                document.getElementById('modal').style.display = 'none';
+            } else {
+                alert('Código de acesso incorreto.');
+            }
+        });
+
+        document.getElementById('adicionarItem').addEventListener('click', function() {
+            const itemValue = document.getElementById('item').value;
+            if (itemValue.trim()) {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('mb-2');
+                itemElement.textContent = itemValue;
+                document.getElementById('itensContainer').appendChild(itemElement);
+                document.getElementById('item').value = '';
+            }
+        });
+
+        document.getElementById('gerarRelatorio').addEventListener('click', function() {
+            const nomeTecnico = document.getElementById('nomeTecnico').value;
+            const nomeEmpresa = document.getElementById('nomeEmpresa').value;
+            const cnpjEmpresa = document.getElementById('cnpjEmpresa').value;
+            const enderecoEmpresa = document.getElementById('enderecoEmpresa').value;
+            const horarioPrevisto = document.getElementById('horarioPrevisto').value;
+            const itens = Array.from(document.getElementById('itensContainer').children).map(item => item.textContent);
+
+            const dados = {
+                nomeTecnico,
+                nomeEmpresa,
+                cnpjEmpresa,
+                enderecoEmpresa,
+                horarioPrevisto,
+                itens
+            };
+
+            const dadosBase64 = btoa(JSON.stringify(dados));
+            const urlRelatorio = `./form.html?dados=${dadosBase64}`;
+
+            document.getElementById('acessarRelatorio').setAttribute('href', urlRelatorio);
+            document.getElementById('resultado').classList.remove('hidden');
+
+            document.getElementById('compartilharRelatorio').addEventListener('click', function() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Ficha de Inspeção de Equipamentos',
+                        url: urlRelatorio
+                    }).catch(console.error);
+                } else {
+                    alert('Compartilhamento não suportado neste dispositivo.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

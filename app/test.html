@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Inspeção de Equipamentos - Braslima</title>
+    <link href="./assets/fontawesome/css/all.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('./imgs/watermark.png');
+                background-repeat: repeat;
+                background-color: transparent;
+                /* garante que não haja cor de fundo */
+
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./imgs/watermark.png');
+            background-repeat: repeat;
+            background-color: transparent;
+            /* garante que não haja cor de fundo */
+
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+
+            border-radius: 8px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            margin-right: 20%;
+            max-width: 150px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+        .info label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info input[type="text"],
+        .info input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .checklist {
+            margin-bottom: 20px;
+        }
+
+        .item {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .item label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .options label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .options label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .options input[type="radio"] {
+            display: none;
+        }
+
+
+
+        .explicacao {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .explicacao.active {
+            display: block;
+        }
+
+        .observacoes {
+            margin-top: 10px;
+        }
+
+        .observacoes textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .fotos {
+            margin-top: 10px;
+        }
+
+        .fotos input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .fotos img {
+            max-width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./imgs/favicon.png" alt="Logo" class="logo">
+            <div>
+                <h1>Relatorio de Inspeção de Equipamentos</h1>
+                <p>Este documento representa a ficha de inspeção de equipamentos conforme ABNT2, destinada à empresa
+                    Braslima, especializada em prevenção de incêndios.</p>
+            </div>
+        </div>
+        <div class="info">
+            <label for="nomeTecnico">Nome do Técnico</label>
+            <input type="text" id="nomeTecnico" readonly>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="nomeEmpresa">Nome da Empresa</label>
+                    <input type="text" class="w-full " id="nomeEmpresa" readonly>
+                </div>
+                <div>
+                    <label for="cnpjEmpresa">CNPJ da Empresa</label>
+                    <input type="text" class="w-full " id="cnpjEmpresa" readonly>
+                </div>
+            </div>
+            <label for="enderecoEmpresa">Endereço da Empresa</label>
+            <input type="text" id="enderecoEmpresa" readonly>
+        </div>
+        <div class="checklist">
+            <h2>Checklist de Equipamentos</h2>
+            <div id="itensChecklist"></div>
+        </div>
+        <div class="footer">
+            <button class="bg-green-500" type="button" onclick="imprimir()">Imprimir Relatorio</button>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        function imprimir() {
+            // Seleciona todos os elementos com a classe "noshowafter"
+            const elementos = document.querySelectorAll('.noshowafter');
+
+            // Itera sobre cada elemento encontrado
+            elementos.forEach(elemento => {
+                // Esconde o elemento
+                elemento.style.display = 'none';
+            });
+            window.print()
+        }
+        function preencherFormulario() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dadosBase64 = urlParams.get('dados');
+            if (dadosBase64) {
+                const dados = JSON.parse(atob(dadosBase64));
+                document.getElementById('nomeTecnico').value = dados.nomeTecnico;
+                document.getElementById('nomeEmpresa').value = dados.nomeEmpresa;
+                document.getElementById('cnpjEmpresa').value = dados.cnpjEmpresa;
+                document.getElementById('enderecoEmpresa').value = dados.enderecoEmpresa;
+                const itensChecklist = document.getElementById('itensChecklist');
+                dados.itens.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('item');
+                    div.innerHTML = `
+                        <label>${item}</label>
+                        <div class="options">
+                            <label onclick="greenBtn(this)" class="option-label conforme">
+                                <input type="radio" name="verificado-${index}" value="Conforme" onclick="mostrarExplicacao(${index}, false)">
+                                <span>Conforme</span>
+                            </label>
+                            <label  onclick="redBtn(this)" class="option-label nao-conforme">
+                                <input type="radio" name="verificado-${index}" value="Não Conforme" onclick="mostrarExplicacao(${index}, true)">
+                                <span>Não Conforme</span>
+                            </label>
+                            <label onclick="redBtn(this)" class="option-label n-a">
+                                <input type="radio" name="verificado-${index}" value="N/A" onclick="mostrarExplicacao(${index}, false)">
+                                <span>N/A</span>
+                            </label>
+                        </div>
+                        <div class="explicacao" id="explicacao-${index}">
+                            <label for="explicacao-${index}">Explicação</label>
+                            <textarea id="explicacao-${index}" class="explicacao-textarea" rows="2" placeholder="Explique o motivo (opcional)"></textarea>
+                        </div>
+                        <label class="block mt-2">Observações</label>
+                        <textarea rows="3" class="observacoes-textarea" placeholder="Observações adicionais"></textarea>
+                        <div class="fotos">
+       <input type="file" onchange="mostrarImagem(this, 'imagens-${index}')">
+                            <div id="imagens-${index}"></div>
+                           
+                            <div id="imagens-${index}"></div>
+                        </div>
+                    `;
+                    itensChecklist.appendChild(div);
+                });
+            }
+        }
+        function greenBtn(btn) {
+            console.log("TESTE")
+            if (btn.style.backgroundColor == "white") {
+                btn.style.color = "white"
+                btn.style.backgroundColor = "lime"
+
+            } else {
+                btn.style.color = "black"
+                btn.style.backgroundColor = "white"
+            }
+        }
+
+
+        function redBtn(btn) {
+            if (btn.style.backgroundColor == "white") {
+                btn.style.color = "white"
+                btn.style.backgroundColor = "red"
+
+            } else {
+                btn.style.color = "black"
+                btn.style.backgroundColor = "white"
+            }
+        }
+        function mostrarExplicacao(index, mostrar, x) {
+            const explicacao = document.getElementById(`explicacao-${index}`);
+            if (mostrar) {
+
+                explicacao.classList.add('active');
+            } else {
+
+                explicacao.classList.remove('active');
+            }
+        }
+
+
+        function changeColor(x, value) {
+            if (value == "1") {
+                x.style.backgroundColor = "lime"
+            }
+            if (value == "2") {
+                x.style.backgroundColor = "red"
+            }
+            if (value == "3") {
+                x.style.backgroundColor = "red"
+            }
+        }
+        function mostrarImagem(input, containerId) {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('foto');
+                document.getElementById(containerId).appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        window.onload = preencherFormulario;
+    </script>
+</body>
+
+</html>
