@@ -540,7 +540,7 @@ video {
   scrollbar-width: none;
   cursor: grab;
   overscroll-behavior-x: contain;
-  touch-action: pan-y;
+  touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
   user-select: none;
   scroll-padding-inline: 2px;

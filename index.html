@@ -206,7 +206,7 @@
 
   <!-- Hero Section -->
   <section class="hero-section relative isolate flex h-screen min-h-[680px] items-center justify-center overflow-hidden bg-neutral-950 text-center">
-    <video autoplay muted loop class="hero-video">
+    <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video">
       <source src="./imgs/banner2.mp4" type="video/mp4">
       Seu navegador não suporta vídeos HTML5.
     </video>
@@ -968,6 +968,14 @@
       var bannerImage = document.querySelector('[alt="www.000webhost.com"]');
       var bannerNode = bannerImage?.parentNode?.parentNode;
       bannerNode?.parentNode?.removeChild(bannerNode);
+
+      document.querySelectorAll('video[autoplay]').forEach((video) => {
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.play?.().catch(() => {});
+      });
     });
     // Mobile menu toggle
     const menuButton = document.getElementById('mobile-menu-button');
@@ -1189,6 +1197,10 @@
     let servicesDidDrag = false;
     let servicesSuppressClickUntil = 0;
     let servicesPointerServiceTrigger = null;
+    let servicesTouchStartX = 0;
+    let servicesTouchStartY = 0;
+    let servicesTouchStartScroll = 0;
+    let servicesDidTouchDrag = false;
 
     function getServicesCarouselMetrics() {
       const cards = Array.from(servicesCarousel?.children || []);
@@ -1259,6 +1271,7 @@
     servicesNext?.addEventListener('click', () => scrollServices(1));
     servicesCarousel?.addEventListener('scroll', () => requestAnimationFrame(updateServicesCarousel));
     servicesCarousel?.addEventListener('pointerdown', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
       if (event.button !== undefined && event.button !== 0) return;
 
       servicesIsPointerDown = true;
@@ -1270,6 +1283,7 @@
       servicesCarousel.setPointerCapture?.(event.pointerId);
     });
     servicesCarousel?.addEventListener('pointermove', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
       if (!servicesIsPointerDown) return;
 
       const deltaX = event.clientX - servicesPointerStartX;
@@ -1284,6 +1298,7 @@
       event.preventDefault();
     });
     servicesCarousel?.addEventListener('pointerup', (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
       if (!servicesIsPointerDown) return;
 
       servicesIsPointerDown = false;
@@ -1315,6 +1330,34 @@
       window.setTimeout(() => {
         servicesDidDrag = false;
       }, 200);
+    });
+    servicesCarousel?.addEventListener('touchstart', (event) => {
+      const touch = event.touches[0];
+      servicesTouchStartX = touch.clientX;
+      servicesTouchStartY = touch.clientY;
+      servicesTouchStartScroll = servicesCarousel.scrollLeft;
+      servicesDidTouchDrag = false;
+    }, { passive: true });
+    servicesCarousel?.addEventListener('touchmove', (event) => {
+      const touch = event.touches[0];
+      const deltaX = touch.clientX - servicesTouchStartX;
+      const deltaY = touch.clientY - servicesTouchStartY;
+      const isHorizontalDrag = Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+
+      if (!isHorizontalDrag && !servicesDidTouchDrag) return;
+
+      servicesDidTouchDrag = true;
+      servicesCarousel.scrollLeft = servicesTouchStartScroll - deltaX;
+      event.preventDefault();
+    }, { passive: false });
+    servicesCarousel?.addEventListener('touchend', () => {
+      if (!servicesDidTouchDrag) return;
+
+      servicesSuppressClickUntil = Date.now() + 260;
+      window.setTimeout(snapServicesToNearestPage, 70);
+      window.setTimeout(() => {
+        servicesDidTouchDrag = false;
+      }, 320);
     });
     servicesCarousel?.addEventListener('click', (event) => {
       if (Date.now() > servicesSuppressClickUntil) return;
