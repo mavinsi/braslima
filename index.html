@@ -1200,6 +1200,8 @@
     let servicesTouchStartX = 0;
     let servicesTouchStartY = 0;
     let servicesTouchStartScroll = 0;
+    let servicesTouchStartTime = 0;
+    let servicesTouchLastX = 0;
     let servicesDidTouchDrag = false;
 
     function getServicesCarouselMetrics() {
@@ -1336,6 +1338,8 @@
       servicesTouchStartX = touch.clientX;
       servicesTouchStartY = touch.clientY;
       servicesTouchStartScroll = servicesCarousel.scrollLeft;
+      servicesTouchStartTime = Date.now();
+      servicesTouchLastX = touch.clientX;
       servicesDidTouchDrag = false;
     }, { passive: true });
     servicesCarousel?.addEventListener('touchmove', (event) => {
@@ -1347,14 +1351,31 @@
       if (!isHorizontalDrag && !servicesDidTouchDrag) return;
 
       servicesDidTouchDrag = true;
+      servicesTouchLastX = touch.clientX;
       servicesCarousel.scrollLeft = servicesTouchStartScroll - deltaX;
       event.preventDefault();
     }, { passive: false });
     servicesCarousel?.addEventListener('touchend', () => {
       if (!servicesDidTouchDrag) return;
 
+      const metrics = getServicesCarouselMetrics();
+      if (metrics) {
+        const deltaX = servicesTouchLastX - servicesTouchStartX;
+        const elapsed = Math.max(Date.now() - servicesTouchStartTime, 1);
+        const velocity = Math.abs(deltaX) / elapsed;
+        const shouldChangePage = Math.abs(deltaX) > Math.min(metrics.cardWidth * 0.28, 110) || velocity > 0.45;
+        const currentPage = Math.round(servicesTouchStartScroll / metrics.pageWidth);
+        const targetPage = shouldChangePage
+          ? currentPage + (deltaX < 0 ? 1 : -1)
+          : Math.round(servicesCarousel.scrollLeft / metrics.pageWidth);
+
+        servicesCarousel.scrollTo({
+          left: Math.min(metrics.maxScroll, Math.max(0, targetPage * metrics.pageWidth)),
+          behavior: 'smooth'
+        });
+      }
+
       servicesSuppressClickUntil = Date.now() + 260;
-      window.setTimeout(snapServicesToNearestPage, 70);
       window.setTimeout(() => {
         servicesDidTouchDrag = false;
       }, 320);
