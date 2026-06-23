@@ -867,7 +867,7 @@ video {
 }
 
 .service-hero {
-  min-height: 420px;
+  min-height: min(520px, 78vh);
 }
 
 .service-aside-card {
