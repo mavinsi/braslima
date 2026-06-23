@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Braslima Solucoes Industriais LTDA">
+  <meta name="theme-color" content="#dc2626">
+  <meta id="metaDescription" name="description" content="">
+  <link rel="canonical" id="canonicalLink" href="">
+  <title id="pageTitle">Serviço | Braslima Engenharia</title>
+  <link href="./imgs/favicon.png" rel="Shortcut icon">
+  <link rel="apple-touch-icon" href="./imgs/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link href="./custom.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-950">
+
+  <nav id="navbar" class="navbar fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-neutral-950/95 text-white backdrop-blur-xl">
+    <div class="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="./index.html" class="inline-flex items-center">
+        <img src="./imgs/logo.png" class="h-10 w-auto" alt="Braslima Engenharia">
+      </a>
+      <div class="hidden items-center gap-2 text-sm font-medium md:flex">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./index.html#history" class="nav-link">Sobre</a>
+        <a href="./index.html#services" class="nav-link">Serviços</a>
+        <button type="button" onclick="openContactModal()" class="nav-link">Contato</button>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/15">
+          <i id="mobile-menu-icon" data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu-backdrop" class="fixed inset-0 top-[72px] z-40 hidden bg-black/55 backdrop-blur-sm md:hidden"></div>
+    <div id="mobile-menu"
+      class="absolute left-0 right-0 top-full z-50 hidden border-t border-white/10 bg-neutral-950/98 px-5 py-4 backdrop-blur-xl md:hidden">
+      <div class="flex flex-col gap-1">
+        <a href="./index.html" class="mobile-nav-link">Home</a>
+        <a href="./index.html#history" class="mobile-nav-link">Sobre</a>
+        <a href="./index.html#services" class="mobile-nav-link">Serviços</a>
+        <button type="button" onclick="openContactModal()" class="mobile-nav-link text-left">Contato</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="servicePage" class="hidden pt-[72px]">
+    <section class="service-hero relative isolate overflow-hidden bg-neutral-950 text-white">
+      <div class="absolute inset-0">
+        <img id="serviceHeroImage" src="" alt="" class="h-full w-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 to-neutral-950/55"></div>
+      </div>
+      <div class="relative z-10 mx-auto max-w-screen-xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <a href="./index.html#services"
+          class="inline-flex items-center gap-2 text-sm font-medium text-gray-300 transition hover:text-white">
+          <i data-lucide="arrow-left" class="h-4 w-4"></i>
+          Voltar aos serviços
+        </a>
+        <span id="serviceBadge"
+          class="mt-6 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-200">
+          <i data-lucide="shield-check" class="h-4 w-4"></i>
+          Braslima Engenharia
+        </span>
+        <h1 id="serviceTitle" class="mt-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl"></h1>
+        <p id="serviceSummary" class="mt-5 max-w-2xl text-base leading-8 text-gray-200 sm:text-lg"></p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <button type="button" id="serviceContactBtn"
+            class="group inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-500">
+            Falar com especialista
+            <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transition group-hover:translate-x-1"></i>
+          </button>
+          <a href="tel:21965608706"
+            class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:text-white">
+            <i data-lucide="phone" class="mr-2 h-4 w-4"></i>
+            (21) 96560-8706
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-14 sm:py-16">
+      <div class="mx-auto grid max-w-screen-xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="lg:col-span-7">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">
+            Sobre este <span class="title-red-gradient">serviço</span>
+          </h2>
+          <p id="serviceDescription" class="mt-5 text-base leading-8 text-gray-600 sm:text-lg"></p>
+          <ul id="serviceHighlights" class="mt-8 grid gap-3"></ul>
+        </div>
+        <aside class="lg:col-span-5">
+          <div class="service-aside-card rounded-2xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-950">Por que a Braslima?</h3>
+            <p class="mt-3 text-sm leading-7 text-gray-600">
+              Equipe técnica credenciada, atendimento no Rio de Janeiro e acompanhamento em todas as etapas — do projeto
+              à regularização junto ao CBMERJ.
+            </p>
+            <button type="button" id="serviceAsideContactBtn"
+              class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-red-500">
+              Solicitar orçamento
+              <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="border-t border-gray-100 bg-gray-50 py-14 sm:py-16">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">
+              Outros <span class="title-red-gradient">serviços</span>
+            </h2>
+            <p class="mt-2 text-sm text-gray-600">Conheça mais soluções da Braslima para proteger sua operação.</p>
+          </div>
+          <a href="./index.html#services"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-red-600 transition hover:text-red-500">
+            Ver todos
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+        <div id="relatedServices" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="serviceNotFound" class="hidden min-h-[70vh] pt-[72px]">
+    <div class="mx-auto flex max-w-screen-md flex-col items-center px-4 py-20 text-center sm:px-6">
+      <div class="flex h-14 w-14 items-center justify-center rounded-full bg-red-50 text-red-600">
+        <i data-lucide="search-x" class="h-6 w-6"></i>
+      </div>
+      <h1 class="mt-6 text-3xl font-bold text-gray-950">Serviço não encontrado</h1>
+      <p class="mt-3 text-gray-600">O serviço que você procura não existe ou o link está incorreto.</p>
+      <a href="./index.html#services"
+        class="mt-8 inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-500">
+        Ver todos os serviços
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-neutral-950 text-white">
+    <div class="mx-auto flex max-w-screen-xl flex-col gap-6 px-4 py-10 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div>
+        <img src="./imgs/logowhite.png" class="h-10 w-auto" alt="Braslima Engenharia">
+        <p class="mt-3 max-w-md text-sm text-gray-400">
+          Prevenção, combate a incêndio e regularização para proteger vidas, patrimônios e operações.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" onclick="openContactModal()" class="footer-social-link" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+          </svg>
+        </button>
+        <a href="https://www.instagram.com/braslimaengenharia/" class="footer-social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="contactModal" class="contact-modal fixed inset-0 z-[80] hidden items-center justify-center px-4 py-6">
+    <button type="button" id="contactModalBackdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"
+      aria-label="Fechar modal"></button>
+    <div
+      class="contact-modal-panel relative z-10 w-full max-w-xl overflow-hidden rounded-2xl border border-gray-200 bg-white text-gray-950 shadow-2xl shadow-black/30">
+      <div class="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-white"></div>
+      <div class="relative p-5 sm:p-7">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600">
+              Atendimento via WhatsApp
+            </span>
+            <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
+              Vamos entender sua <span class="title-red-gradient">necessidade.</span>
+            </h2>
+          </div>
+          <button type="button" id="contactModalClose"
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-gray-50 text-gray-600 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+            aria-label="Fechar modal">
+            <i data-lucide="x" class="h-5 w-5"></i>
+          </button>
+        </div>
+        <form id="contactForm" class="mt-6 grid gap-4">
+          <input id="contactService" name="service" type="hidden">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="contact-field">
+              <span>Nome</span>
+              <input id="contactName" name="name" type="text" autocomplete="name" required placeholder="Seu nome">
+            </label>
+            <label class="contact-field">
+              <span>Telefone</span>
+              <input id="contactPhone" name="phone" type="tel" autocomplete="tel" required placeholder="(21) 99999-9999">
+            </label>
+          </div>
+          <label class="contact-field">
+            <span>Empresa</span>
+            <input id="contactCompany" name="company" type="text" autocomplete="organization" placeholder="Nome da empresa">
+          </label>
+          <label class="contact-field">
+            <span>Mensagem</span>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Conte rapidamente o que você precisa"></textarea>
+          </label>
+          <button type="submit"
+            class="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-red-500">
+            Enviar pelo WhatsApp
+            <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/services-data.js"></script>
+  <script>
+    const whatsappNumber = '5521965608706';
+    const contactModal = document.getElementById('contactModal');
+    const contactForm = document.getElementById('contactForm');
+    const contactService = document.getElementById('contactService');
+    const contactName = document.getElementById('contactName');
+    const contactPhone = document.getElementById('contactPhone');
+    const contactCompany = document.getElementById('contactCompany');
+    const contactMessage = document.getElementById('contactMessage');
+
+    function openContactModal(service = '') {
+      if (contactService) contactService.value = service || contactService.value || '';
+      contactModal?.classList.remove('hidden');
+      contactModal?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      window.setTimeout(() => contactName?.focus(), 80);
+      lucide.createIcons();
+    }
+
+    function closeContactModal() {
+      contactModal?.classList.add('hidden');
+      contactModal?.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    window.openContactModal = openContactModal;
+
+    function buildWhatsAppMessage() {
+      const lines = [
+        'Olá! Vim pelo site da Braslima e gostaria de atendimento.',
+        '',
+        `Nome: ${contactName?.value.trim() || '-'}`,
+        `Telefone: ${contactPhone?.value.trim() || '-'}`,
+        `Empresa: ${contactCompany?.value.trim() || '-'}`
+      ];
+
+      if (contactService?.value.trim()) {
+        lines.push(`Serviço de interesse: ${contactService.value.trim()}`);
+      }
+
+      lines.push(`Mensagem: ${contactMessage?.value.trim() || '-'}`);
+      return lines.join('\n');
+    }
+
+    function maskPhone(value) {
+      const numbers = value.replace(/\D/g, '').slice(0, 11);
+      if (numbers.length <= 2) return numbers;
+      if (numbers.length <= 6) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+      if (numbers.length <= 10) return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(6)}`;
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+    }
+
+    document.getElementById('contactModalClose')?.addEventListener('click', closeContactModal);
+    document.getElementById('contactModalBackdrop')?.addEventListener('click', closeContactModal);
+    contactPhone?.addEventListener('input', () => {
+      contactPhone.value = maskPhone(contactPhone.value);
+    });
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const message = buildWhatsAppMessage();
+      window.location.href = `https://api.whatsapp.com/send?phone=${encodeURIComponent(whatsappNumber)}&text=${encodeURIComponent(message)}`;
+    });
+
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function closeMobileMenu() {
+      mobileMenu?.classList.add('hidden');
+      mobileMenuBackdrop?.classList.add('hidden');
+      menuButton?.setAttribute('aria-expanded', 'false');
+      document.getElementById('mobile-menu-icon')?.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+    }
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden') === false;
+      mobileMenuBackdrop?.classList.toggle('hidden', !isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      document.getElementById('mobile-menu-icon')?.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+
+    mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+    mobileMenu?.querySelectorAll('a, button').forEach((item) => {
+      item.addEventListener('click', closeMobileMenu);
+    });
+
+    function renderRelatedServices(currentSlug) {
+      const container = document.getElementById('relatedServices');
+      if (!container) return;
+
+      const others = SERVICE_SLUGS.filter((slug) => slug !== currentSlug).slice(0, 4);
+      container.innerHTML = others.map((slug) => {
+        const service = SERVICES[slug];
+        return `
+          <a href="${getServicePageUrl(slug)}" class="related-service-card group">
+            <div class="related-service-card-media">
+              <img src="${service.image}" alt="${service.imageAlt}">
+            </div>
+            <h3>${service.navLabel}</h3>
+            <p>${service.navDesc}</p>
+            <span class="related-service-card-link">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function renderServicePage() {
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      const service = getServiceBySlug(slug);
+      const page = document.getElementById('servicePage');
+      const notFound = document.getElementById('serviceNotFound');
+
+      if (!service) {
+        page?.classList.add('hidden');
+        notFound?.classList.remove('hidden');
+        document.title = 'Serviço não encontrado | Braslima Engenharia';
+        lucide.createIcons();
+        return;
+      }
+
+      page?.classList.remove('hidden');
+      notFound?.classList.add('hidden');
+
+      document.title = `${service.title} | Braslima Engenharia`;
+      document.getElementById('metaDescription').setAttribute('content', service.summary);
+      document.getElementById('canonicalLink').setAttribute('href', `https://braslimaengenharia.com.br/servico.html?slug=${service.slug}`);
+      document.getElementById('pageTitle').textContent = `${service.title} | Braslima Engenharia`;
+
+      document.getElementById('serviceHeroImage').src = service.image;
+      document.getElementById('serviceHeroImage').alt = service.imageAlt;
+      document.getElementById('serviceTitle').textContent = service.title;
+      document.getElementById('serviceSummary').textContent = service.summary;
+      document.getElementById('serviceDescription').textContent = service.description;
+
+      const highlights = document.getElementById('serviceHighlights');
+      highlights.innerHTML = service.highlights.map((item) => `
+        <li class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm leading-6 text-gray-700">
+          <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+            <i data-lucide="check" class="h-3.5 w-3.5"></i>
+          </span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+
+      if (contactService) contactService.value = service.contactName;
+
+      const openServiceContact = () => openContactModal(service.contactName);
+      document.getElementById('serviceContactBtn')?.addEventListener('click', openServiceContact);
+      document.getElementById('serviceAsideContactBtn')?.addEventListener('click', openServiceContact);
+
+      renderRelatedServices(service.slug);
+      lucide.createIcons();
+    }
+
+    renderServicePage();
+  </script>
+</body>
+
+</html>

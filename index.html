@@ -92,6 +92,7 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
+      filter: brightness(0.72);
     }
 
     /* Navbar transparente sobre o vídeo */
@@ -126,38 +127,38 @@
             class="nav-dropdown invisible absolute left-1/2 top-full z-30 w-[520px] -translate-x-1/2 pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
             <div class="rounded-lg border border-white/10 bg-neutral-950/95 p-3 shadow-2xl shadow-black/30 backdrop-blur-xl">
               <div class="grid grid-cols-2 gap-1">
-                <button type="button" data-service="Sistemas de alarmes e detecção (SDAI)" class="nav-dropdown-item">
+                <a href="./servico.html?slug=sdai" class="nav-dropdown-item">
                   <span>SDAI</span>
                   <small>Alarmes e detecção</small>
-                </button>
-                <button type="button" data-service="Equipamentos para hidrantes" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=hidrantes" class="nav-dropdown-item">
                   <span>Hidrantes</span>
                   <small>Equipamentos e sistemas</small>
-                </button>
-                <button type="button" data-service="Venda de Extintores" class="nav-dropdown-item">
-                  <span>Extintores</span>
+                </a>
+                <a href="./servico.html?slug=extintores" class="nav-dropdown-item">
+                  <span>Extintores e Sinalização</span>
                   <small>Venda e suporte</small>
-                </button>
-                <button type="button" data-service="Instalação e Manutenção de CMI" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=cmi" class="nav-dropdown-item">
                   <span>CMI</span>
                   <small>Casa de máquinas</small>
-                </button>
-                <button type="button" data-service="Instalação de Sistema Fixos de Co2 e Saponificante" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=co2-saponificante" class="nav-dropdown-item">
                   <span>CO2 e Saponificante</span>
                   <small>Sistemas fixos</small>
-                </button>
-                <button type="button" data-service="Elaboração de Projetos" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=projetos" class="nav-dropdown-item">
                   <span>Projetos</span>
                   <small>Engenharia contra incêndio</small>
-                </button>
-                <button type="button" data-service="Instalação de Sprinklers" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=sprinklers" class="nav-dropdown-item">
                   <span>Sprinklers</span>
                   <small>Chuveiros automáticos</small>
-                </button>
-                <button type="button" data-service="Legalização junto ao CBMERJ" class="nav-dropdown-item">
+                </a>
+                <a href="./servico.html?slug=legalizacao" class="nav-dropdown-item">
                   <span>Legalização</span>
                   <small>Regularização CBMERJ</small>
-                </button>
+                </a>
               </div>
               <a href="#services"
                 class="mt-2 flex items-center justify-between rounded-md border border-white/10 px-3 py-2 text-sm font-semibold text-white/80 transition hover:border-red-500/50 hover:text-white">
@@ -189,14 +190,14 @@
           <i data-lucide="chevron-down" class="h-4 w-4 transition" id="mobile-services-icon"></i>
         </button>
         <div id="mobile-services-menu" class="hidden rounded-lg border border-white/10 bg-white/5 p-2">
-          <button type="button" data-service="Sistemas de alarmes e detecção (SDAI)" class="mobile-service-link">SDAI</button>
-          <button type="button" data-service="Equipamentos para hidrantes" class="mobile-service-link">Hidrantes</button>
-          <button type="button" data-service="Venda de Extintores" class="mobile-service-link">Extintores</button>
-          <button type="button" data-service="Instalação e Manutenção de CMI" class="mobile-service-link">CMI</button>
-          <button type="button" data-service="Instalação de Sistema Fixos de Co2 e Saponificante" class="mobile-service-link">CO2 e Saponificante</button>
-          <button type="button" data-service="Elaboração de Projetos" class="mobile-service-link">Projetos</button>
-          <button type="button" data-service="Instalação de Sprinklers" class="mobile-service-link">Sprinklers</button>
-          <button type="button" data-service="Legalização junto ao CBMERJ" class="mobile-service-link">Legalização</button>
+          <a href="./servico.html?slug=sdai" class="mobile-service-link">SDAI</a>
+          <a href="./servico.html?slug=hidrantes" class="mobile-service-link">Hidrantes</a>
+          <a href="./servico.html?slug=extintores" class="mobile-service-link">Extintores</a>
+          <a href="./servico.html?slug=cmi" class="mobile-service-link">CMI</a>
+          <a href="./servico.html?slug=co2-saponificante" class="mobile-service-link">CO2 e Saponificante</a>
+          <a href="./servico.html?slug=projetos" class="mobile-service-link">Projetos</a>
+          <a href="./servico.html?slug=sprinklers" class="mobile-service-link">Sprinklers</a>
+          <a href="./servico.html?slug=legalizacao" class="mobile-service-link">Legalização</a>
           <a href="#services" class="mobile-service-link">Ver todos</a>
         </div>
         <button type="button" onclick="openContactModal()" class="mobile-nav-link text-left">Contato</button>
@@ -207,11 +208,11 @@
   <!-- Hero Section -->
   <section class="hero-section relative isolate flex h-screen min-h-[680px] items-center justify-center overflow-hidden bg-neutral-950 text-center">
     <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video">
-      <source src="./imgs/banner2.mp4" type="video/mp4">
+      <source src="./imgs/banner6.mp4" type="video/mp4">
       Seu navegador não suporta vídeos HTML5.
     </video>
-    <div class="absolute inset-0 z-[1] bg-neutral-950/60"></div>
-    <div class="absolute inset-x-0 bottom-0 z-[2] h-32 bg-gradient-to-t from-neutral-950/70 to-transparent"></div>
+    <div class="absolute inset-0 z-[1] bg-neutral-950/76"></div>
+    <div class="absolute inset-x-0 bottom-0 z-[2] h-36 bg-gradient-to-t from-neutral-950/80 to-transparent"></div>
 
     <div class="hero-content relative z-10 mx-auto max-w-4xl px-5 scale_up">
       <p class="hero-eyebrow mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-red-400">
@@ -230,7 +231,7 @@
       </p>
 
       <div class="hero-actions mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <button data-service="como proteger meu patrimônio contra incêndio"
+        <button type="button" onclick="openContactModal('como proteger meu patrimônio contra incêndio')"
           class="group inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-500">
           Solicitar orçamento
           <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transition group-hover:translate-x-1"></i>
@@ -287,7 +288,7 @@
         </div>
 
         <div class="scale_up overflow-hidden rounded-lg bg-gray-100 shadow-sm lg:col-span-8 lg:row-span-2">
-          <img class="h-[280px] w-full object-cover sm:h-[340px] lg:h-full lg:min-h-0" src="./imgs/loja.png"
+          <img class="h-[280px] w-full object-cover sm:h-[340px] lg:h-full lg:min-h-0" src="./imgs/loja2.png"
             alt="Fachada da loja Braslima Engenharia" />
         </div>
 
@@ -403,7 +404,7 @@
 
           <div id="servicesCarousel"
             class="services-carousel reveal_bottom mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 lg:gap-5">
-            <button data-service="Sistemas de alarmes e detecção (SDAI)"
+            <a href="./servico.html?slug=sdai"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/SDAI.png" alt="Sistema de alarme e detecção de incêndio">
@@ -415,10 +416,10 @@
                 São sistemas responsáveis por indicar quando e onde há propagação de chamas, evitando, assim, o
                 alastramento de fogo, que pode causar inúmeras perdas materiais e, até mesmo, humanas.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
 
-            <button data-service="Equipamentos para hidrantes"
+            <a href="./servico.html?slug=hidrantes"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/sistemahidrante.jpg" alt="Sistema de hidrante contra incêndio">
@@ -430,26 +431,26 @@
                 São sistemas hidráulicos com a função de ajudar no combate aos incêndios e proteger as pessoas e os
                 patrimônios em casos de emergências.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
 
-            <button data-service="Venda de Extintores"
+            <a href="./servico.html?slug=extintores"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/extintores.jpg" alt="Extintores de incêndio">
               </div>
 
-              <h2>Venda de Extintores</h2>
+              <h2>Venda de Extintores e Sinalização</h2>
 
               <p>
                 São dispositivos de combate ao princípio de incêndio. São equipamentos com pequena autonomia de ação que
                 são destinados ao combate do foco do fogo.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
 
 
-            <button data-service="Instalação e Manutenção de CMI"
+            <a href="./servico.html?slug=cmi"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/cmi.webp" alt="Casa de máquinas de incêndio">
@@ -461,10 +462,10 @@
                 É um compartimento destinado especificamente ao abrigo de bombas elétricas de incêndio e demais
                 apetrechos complementares ao seu funcionamento, não admitindo o seu uso para outro fim.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
 
-            <button data-service="Instalação de Sistema Fixos de Co2 e Saponificante"
+            <a href="./servico.html?slug=co2-saponificante"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/saponificante.jpg" alt="Sistema fixo de CO2 e saponificante">
@@ -476,9 +477,9 @@
                 É destinado à proteção dos dutos de exaustão da cozinha tendo como referência as recomendações das
                 normas relacionadas, prevalecendo os parâmetros de norma de maior exigência.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
-            <button data-service="Elaboração de Projetos"
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
+            <a href="./servico.html?slug=projetos"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/projetos.jpg" alt="Projetos de engenharia contra incêndio">
@@ -491,9 +492,9 @@
                 alcançar, a identificar as principais deficiências, e a superar e apontar possíveis falhas durante a
                 execução das atividades previstas.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
-            <button data-service="Instalação de Sprinklers"
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
+            <a href="./servico.html?slug=sprinklers"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/sprinklers.jpg" alt="Sistema hidráulico contra incêndio">
@@ -505,9 +506,9 @@
                 Chuveiros Automáticos ou sprinklers, como são mais conhecidos, servem para proteger os ambientes de
                 incêndios e são fundamentais para a segurança de patrimônios e vidas humanas.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
-            <button data-service="Legalização junto ao CBMERJ"
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
+            <a href="./servico.html?slug=legalizacao"
               class="service-card">
               <div class="service-card-media">
                 <img src="./imgs/services/cbmerj.jpg" alt="Legalização junto ao CBMERJ">
@@ -520,8 +521,8 @@
                 com as legislações e normas vigentes, obedecendo regras e exigências conforme a característica de cada
                 edificação.
               </p>
-              <span class="service-card-cta">Falar com especialista <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
-            </button>
+              <span class="service-card-cta">Saiba mais <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </a>
 
           </div>
 
@@ -732,41 +733,61 @@
     </video>
     <div class="absolute inset-0 z-[1] bg-neutral-950/90"></div>
 
-    <section class="relative z-10 mx-auto grid max-w-screen-xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8">
-      <div class="lg:col-span-5">
+    <section class="footer-contact relative z-10 mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="footer-contact-intro max-w-2xl">
         <span class="inline-flex items-center rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-200">
           Fale com a Braslima
         </span>
         <h2 class="mt-5 text-3xl font-bold tracking-tight sm:text-5xl">
           Segurança contra incêndio começa com uma <span class="title-red-gradient">conversa.</span>
         </h2>
-        <p class="mt-4 max-w-lg text-base leading-8 text-gray-300">
+        <p class="mt-4 text-base leading-8 text-gray-300">
           Atendimento técnico para projetos, equipamentos, manutenção e regularização junto aos órgãos competentes.
         </p>
-
-        <div class="mt-8 grid gap-3">
-          <a href="tel:21965608706" class="footer-contact-card">
-            <i data-lucide="phone" class="h-5 w-5"></i>
-            <span>+55 (21) 96560-8706</span>
-          </a>
-          <a href="mailto:comercial@braslimaengenharia.com.br" class="footer-contact-card">
-            <i data-lucide="mail" class="h-5 w-5"></i>
-            <span>comercial@braslimaengenharia.com.br</span>
-          </a>
-          <a href="https://www.google.com/maps?ll=-22.883391,-43.62454&z=14&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=14171159292937465852"
-            target="_blank" rel="noopener noreferrer" class="footer-contact-card">
-            <i data-lucide="map-pin" class="h-5 w-5"></i>
-            <span>Estr. do Campinho, 6523 - Rio de Janeiro</span>
-          </a>
-        </div>
       </div>
 
-      <div class="lg:col-span-7">
-        <div class="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2 shadow-2xl shadow-black/30">
-          <iframe class="h-[360px] w-full rounded-lg" frameborder="0"
-            marginheight="0" marginwidth="0" title="Mapa da Braslima" scrolling="no"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14703.249163206661!2d-43.6245399!3d-22.8833915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5583e10178f%3A0xc4aa124b7f036ffc!2sBraslima%20-%20Preven%C3%A7%C3%A3o%20e%20Combate%20a%20Inc%C3%AAndio!5e0!3m2!1spt-BR!2sbr!4v1726154421577!5m2!1spt-BR!2sbr"></iframe>
+      <div class="footer-contact-layout mt-8">
+        <div class="footer-contact-stack">
+          <a href="tel:21965608706" class="footer-contact-card">
+            <span class="footer-contact-icon">
+              <i data-lucide="phone" class="h-5 w-5"></i>
+            </span>
+            <span class="footer-contact-text">+55 (21) 96560-8706</span>
+          </a>
+          <a href="mailto:comercial@braslimaengenharia.com.br" class="footer-contact-card">
+            <span class="footer-contact-icon">
+              <i data-lucide="mail" class="h-5 w-5"></i>
+            </span>
+            <span class="footer-contact-text">comercial@braslimaengenharia.com.br</span>
+          </a>
         </div>
+
+        <div class="footer-map-panel">
+          <div class="footer-map-header">
+            <span class="footer-map-label">
+              <i data-lucide="map-pin" class="h-4 w-4"></i>
+              Nossa localização
+            </span>
+            <a href="https://www.google.com/maps?ll=-22.883391,-43.62454&z=14&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=14171159292937465852"
+              target="_blank" rel="noopener noreferrer" class="footer-map-link">
+              Abrir no Maps
+              <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+            </a>
+          </div>
+          <div class="footer-map-frame">
+            <iframe class="footer-map-iframe" frameborder="0" marginheight="0" marginwidth="0" title="Mapa da Braslima"
+              scrolling="no" loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14703.249163206661!2d-43.6245399!3d-22.8833915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5583e10178f%3A0xc4aa124b7f036ffc!2sBraslima%20-%20Preven%C3%A7%C3%A3o%20e%20Combate%20a%20Inc%C3%AAndio!5e0!3m2!1spt-BR!2sbr!4v1726154421577!5m2!1spt-BR!2sbr"></iframe>
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps?ll=-22.883391,-43.62454&z=14&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=14171159292937465852"
+          target="_blank" rel="noopener noreferrer" class="footer-contact-card footer-contact-address">
+          <span class="footer-contact-icon">
+            <i data-lucide="map-pin" class="h-5 w-5"></i>
+          </span>
+          <span class="footer-contact-text">Estr. do Campinho, 6523 - Rio de Janeiro</span>
+        </a>
       </div>
     </section>
 
@@ -1269,9 +1290,18 @@
       });
     }
 
+    let servicesTouchLink = null;
+
     servicesPrev?.addEventListener('click', () => scrollServices(-1));
     servicesNext?.addEventListener('click', () => scrollServices(1));
     servicesCarousel?.addEventListener('scroll', () => requestAnimationFrame(updateServicesCarousel));
+
+    function openServiceCardLink(link) {
+      if (!link?.href) return;
+      servicesSuppressClickUntil = Date.now() + 320;
+      window.location.assign(link.href);
+    }
+
     servicesCarousel?.addEventListener('pointerdown', (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') return;
       if (event.button !== undefined && event.button !== 0) return;
@@ -1281,8 +1311,7 @@
       servicesPointerStartX = event.clientX;
       servicesPointerStartY = event.clientY;
       servicesPointerStartScroll = servicesCarousel.scrollLeft;
-      servicesPointerServiceTrigger = event.target.closest('[data-service]');
-      servicesCarousel.setPointerCapture?.(event.pointerId);
+      servicesPointerServiceTrigger = event.target.closest('a.service-card');
     });
     servicesCarousel?.addEventListener('pointermove', (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') return;
@@ -1293,6 +1322,10 @@
       const isHorizontalDrag = Math.abs(deltaX) > 18 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
 
       if (!isHorizontalDrag && !servicesDidDrag) return;
+
+      if (!servicesDidDrag) {
+        servicesCarousel.setPointerCapture?.(event.pointerId);
+      }
 
       servicesDidDrag = true;
       servicesCarousel.classList.add('is-dragging');
@@ -1310,10 +1343,7 @@
       servicesCarousel.classList.remove('is-dragging');
 
       if (!servicesDidDrag) {
-        if (servicesPointerServiceTrigger) {
-          servicesSuppressClickUntil = Date.now() + 220;
-          openContactModal(servicesPointerServiceTrigger.getAttribute('data-service') || '');
-        }
+        openServiceCardLink(servicesPointerServiceTrigger);
         servicesPointerServiceTrigger = null;
         return;
       }
@@ -1341,6 +1371,7 @@
       servicesTouchStartTime = Date.now();
       servicesTouchLastX = touch.clientX;
       servicesDidTouchDrag = false;
+      servicesTouchLink = event.target.closest('a.service-card');
     }, { passive: true });
     servicesCarousel?.addEventListener('touchmove', (event) => {
       const touch = event.touches[0];
@@ -1356,7 +1387,11 @@
       event.preventDefault();
     }, { passive: false });
     servicesCarousel?.addEventListener('touchend', () => {
-      if (!servicesDidTouchDrag) return;
+      if (!servicesDidTouchDrag) {
+        openServiceCardLink(servicesTouchLink);
+        servicesTouchLink = null;
+        return;
+      }
 
       const metrics = getServicesCarouselMetrics();
       if (metrics) {
@@ -1376,6 +1411,7 @@
       }
 
       servicesSuppressClickUntil = Date.now() + 260;
+      servicesTouchLink = null;
       window.setTimeout(() => {
         servicesDidTouchDrag = false;
       }, 320);
@@ -1383,24 +1419,11 @@
     servicesCarousel?.addEventListener('click', (event) => {
       if (Date.now() > servicesSuppressClickUntil) return;
 
+      const cardLink = event.target.closest('a.service-card');
+      if (!cardLink?.href) return;
+
       event.preventDefault();
       event.stopPropagation();
-    }, true);
-    document.addEventListener('click', (event) => {
-      const serviceTrigger = event.target.closest('[data-service]');
-      if (!serviceTrigger) return;
-
-      if (serviceTrigger.closest('#servicesCarousel') && Date.now() <= servicesSuppressClickUntil) return;
-
-      const service = serviceTrigger.getAttribute('data-service') || '';
-
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      openContactModal(service);
-
-      if (serviceTrigger.closest('#mobile-menu')) {
-        closeMobileMenu();
-      }
     }, true);
     window.addEventListener('resize', updateServicesCarousel);
     if (servicesCarousel) {
