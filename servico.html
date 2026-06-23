@@ -299,9 +299,17 @@
     function updateNavbarOnScroll() {
       const navbar = document.getElementById('navbar');
       const hero = document.querySelector('.service-hero');
+      const page = document.getElementById('servicePage');
+      const heroVisible = hero && page && !page.classList.contains('hidden');
       if (!navbar) return;
 
-      const threshold = hero ? Math.max(hero.offsetHeight - 72, 60) : 60;
+      if (!heroVisible) {
+        navbar.classList.add('bg-neutral-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+        navbar.classList.remove('bg-transparent');
+        return;
+      }
+
+      const threshold = Math.max(hero.offsetHeight - 72, 60);
 
       if (window.scrollY > threshold) {
         navbar.classList.add('bg-neutral-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10');
@@ -504,9 +512,11 @@
 
       renderRelatedServices(service.slug);
       lucide.createIcons();
+      updateNavbarOnScroll();
     }
 
     renderServicePage();
+    updateNavbarOnScroll();
   </script>
 
   <a href="https://api.whatsapp.com/send?phone=5521965608706&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Braslima%20e%20gostaria%20de%20atendimento."
